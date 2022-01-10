@@ -28,9 +28,7 @@ public class BancoDeDados {
         this.metodosUteis = new Utilidades();
     }
 
-    /**
-     * Metodos relacionados ao cadastro 
-     */
+ 
     public void extendendoArray(String qual) {
         if (qual.equals("pessoas")) {
             this.indexPessoas = getPessoas().length;
@@ -60,10 +58,7 @@ public class BancoDeDados {
         Arrays.sort(getAlunos());
     }
 
-    /**
-     * Metodos relacionados a listagem
-     * @param pessoa
-     */
+    
     
     public void listar(Pessoa pessoa) {
         System.out.println(" ..............................\n"
@@ -89,10 +84,8 @@ public class BancoDeDados {
         System.out.println("'-----------------------------------------------\n");
     }
 
-    /**
-     * Metodos Relacionados a exclusao
-     */
-    // Remover pessoa ou aluno da lista
+   
+    
     public void remover(String qual, int index) {
 
         if (qual.equalsIgnoreCase("pessoas")) {

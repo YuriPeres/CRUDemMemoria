@@ -46,7 +46,7 @@ public class DAOcontroller {
             Date agora = new Date();
 
             System.out.println("Caso seja um Aluno, digite a nota. Se nao, cadastrara Pessoa: ");
-            String nota = (sc.nextLine());
+            String nota = sc.nextLine().replaceAll(",", ".");
             Float notaF ;
             //Verificando se é aluno
             try {
@@ -130,7 +130,7 @@ public class DAOcontroller {
 
                     } else { //É Aluno 
                         System.out.println("Nota: ");
-                        Float notaF = metodosUteis.formatarNota(Float.parseFloat(sc.nextLine()));
+                        Float notaF = metodosUteis.formatarNota(Float.parseFloat(sc.nextLine().replaceAll(",",".")));
                         //Extendendo Array
                         database.extendendoArray("alunos");
 

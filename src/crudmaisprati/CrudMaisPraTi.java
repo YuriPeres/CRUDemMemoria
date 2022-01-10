@@ -27,32 +27,25 @@ public class CrudMaisPraTi {
                 + "| Fechar programa -> 0 |\n"
                 + "'----------------------'\n"
                 + " -> Escolha qual opcao quer: ");
-//            opcao = Integer.parseInt(sc.nextLine());
-//            System.out.println("|==============================|");
     }
 
     public void executeOpcao(int opcao) {
         switch (opcao) {
             case 1: {
                 controller.cadastrar();
-                //limparTela();
                 break;
             }
             case 2: {
                 controller.qualListar();
-                //limparTela();
                 break;
 
             }
             case 3: {
                 controller.atualizarCadastro();
-                //limparTela();
                 break;
             }
             case 4: {
                 controller.deletarCadastro();
-                //limparTela();
-
                 break;
             }
         }

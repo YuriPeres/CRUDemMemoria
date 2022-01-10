@@ -23,7 +23,7 @@ public class Utilidades {
         MaskFormatter mf;
         try {
             mf = new MaskFormatter(modelo);
-            mf.setValueContainsLiteralCharacters(false);
+            mf.setValueContainsLiteralCharacters(false); //Setando falso nao tera caracteres especiais
             return mf.valueToString(txt);
         } catch (ParseException ex) {
             return txt;
@@ -41,11 +41,15 @@ public class Utilidades {
     }
 
     public String retornarTelefone(String txt) {
-        if (apenasNumero(txt).length() != 11) {
-            forcarErro();
-            return null;
+        switch (apenasNumero(txt).length()) {
+            case 10:
+                return formatadorStringNum(apenasNumero(txt), "(##) ####-####");
+            case 11:
+                return formatadorStringNum(apenasNumero(txt), "(##) #####-####");
+            default:
+                forcarErro();
+                return null;
         }
-        return formatadorStringNum(apenasNumero(txt), "(##) #####-####");
     }
 
     public Float formatarNota(Float nota) {
